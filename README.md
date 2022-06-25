@@ -2,7 +2,8 @@
 
 ℹ️ This is a forked version of the [original repository](https://github.com/nurislam03/MERN_A_to_Z_Client) with the following updates:
 
-- React functional components
+- React functional component migration
+- Up-to-date dependencies
 - `.env` to hold the base URL of the RESTful API
 - Other minor updates and enhancements
 
