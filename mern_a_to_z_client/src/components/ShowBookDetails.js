@@ -11,7 +11,7 @@ function ShowBookDetails() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8082/api/books/' + id)
+      .get('/books/' + id)
       .then(res => {
         setBook(res.data);
       })
@@ -22,7 +22,7 @@ function ShowBookDetails() {
 
   function onDeleteClick(id) {
     axios
-      .delete('http://localhost:8082/api/books/' + id)
+      .delete('/books/' + id)
       .then(res => {
         navigate("/");
       })

@@ -23,7 +23,7 @@ function CreateBook() {
     e.preventDefault();
 
     axios
-      .post('http://localhost:8082/api/books', book)
+      .post('/books', book)
       .then(res => {
         navigate('/');
       })
@@ -39,7 +39,7 @@ function CreateBook() {
           <div className="col-md-8 m-auto">
             <br />
             <Link to="/" className="btn btn-outline-warning float-left">
-                Show BooK List
+                Show Book List
             </Link>
           </div>
           <div className="col-md-8 m-auto">
