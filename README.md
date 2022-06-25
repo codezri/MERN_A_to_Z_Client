@@ -1,18 +1,33 @@
 # MERN_A_to_Z_Client
 
-### To Run the app (Client - React)
+ℹ️ This is a forked version of the [original repository](https://github.com/nurislam03/MERN_A_to_Z_Client) with the following updates:
 
-##### Make sure you are in - MERN_A_to_Z_Client/mern_a_to_z_client/  directory & type the following command
+- React functional components
+- `.env` to hold the base URL of the RESTful API
+- Other minor updates and enhancements
 
-```sh
-$ npm install
-$ npm start
+Credit goes to the original author: [Nur Islam](https://blog.logrocket.com/author/nurislam/)
+
+### How to run the React app
+
+Make sure you are in the `MERN_A_to_Z_Client/mern_a_to_z_client/`  directory. Enter the following commands to set up and start the development server:
+
+```bash
+npm install
+npm start
+# --- or ---
+yarn install
+yarn start
 ```
 
-### To Explore all features in this project you need to connect the server first. Here you will find the necessary files (backend/server).
+To explore all features in this project, you need to run the RESTful API server first.
 
-##### GitHub Repo - Backend/Server
+### Backend/Server implementation
+
 [https://github.com/nurislam03/MERN_A_to_Z](https://github.com/nurislam03/MERN_A_to_Z)
 
-#### Read My Article about this server side coding
-[LogRocket Article Link](https://blog.logrocket.com/mern-stack-a-to-z-part-1/)
+Read my article about this server side implementation: [The MERN stack: A complete tutorial](https://blog.logrocket.com/mern-stack-tutorial/)
+
+### License
+
+[MIT](LICENSE)
