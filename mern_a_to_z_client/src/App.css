@@ -63,10 +63,14 @@
 /* BookList Styles */
 .list {
   display: grid;
-  margin: 20px 0 50px 0;
+  padding-bottom: 48px;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 1fr;
   grid-gap: 2em;
+}
+
+.list-msg {
+  grid-column: 2 / 4;
 }
 
 .card-container {

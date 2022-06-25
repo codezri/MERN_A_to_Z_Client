@@ -1,71 +1,61 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import BookCard from './BookCard';
 
-class ShowBookList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      books: []
-    };
-  }
+function ShowBookList() {
 
-  componentDidMount() {
+  let [books, setBooks] = useState([]);
+
+  useEffect(() => {
     axios
-      .get('http://localhost:8082/api/books')
+      .get('/books')
       .then(res => {
-        this.setState({
-          books: res.data
-        })
+        setBooks(res.data);
       })
       .catch(err =>{
         console.log('Error from ShowBookList');
       })
-  };
+  }, []);
 
+  let bookList;
 
-  render() {
-    const books = this.state.books;
-    console.log("PrintBook: " + books);
-    let bookList;
-
-    if(!books) {
-      bookList = "there is no book recored!";
-    } else {
-      bookList = books.map((book, k) =>
-        <BookCard book={book} key={k} />
-      );
-    }
-
-    return (
-      <div className="ShowBookList">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <br />
-              <h2 className="display-4 text-center">Books List</h2>
-            </div>
-
-            <div className="col-md-11">
-              <Link to="/create-book" className="btn btn-outline-warning float-right">
-                + Add New Book
-              </Link>
-              <br />
-              <br />
-              <hr />
-            </div>
-
-          </div>
-
-          <div className="list">
-                {bookList}
-          </div>
-        </div>
-      </div>
+  if(books.length === 0) {
+    bookList = <div className="list-msg">ℹ️ No books added. Click the 'Add New Book' button to add one.</div>;
+  }
+  else {
+    bookList = books.map((book, k) =>
+      <BookCard book={book} key={k} />
     );
   }
+
+  return (
+    <div className="ShowBookList">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <br />
+            <h2 className="display-4 text-center">Book List</h2>
+          </div>
+
+          <div className="col-md-11">
+            <Link to="/create-book" className="btn btn-outline-warning float-right">
+              + Add New Book
+            </Link>
+            <br />
+            <br />
+            <hr />
+          </div>
+
+        </div>
+
+        <div className="list">
+              {bookList}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default ShowBookList;
