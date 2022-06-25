@@ -22,7 +22,7 @@ yarn start
 
 To explore all features in this project, you need to run the RESTful API server first.
 
-### Backend/Server implementation
+### RESTful API implementation
 
 [https://github.com/nurislam03/MERN_A_to_Z](https://github.com/nurislam03/MERN_A_to_Z)
 
